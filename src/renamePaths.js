@@ -20,7 +20,7 @@ function renameAndTransform(
     if (renameFile(previousPath, nextPath)) {
       if (
         isDirectorySync(nextPath) ||
-        (extname(previousPath) === ".js" && extname(nextPath) === ".js")
+        (extname(previousPath) === ".jsx" && extname(nextPath) === ".jsx")
       ) {
         const filesThatMoved = paths.map(path => path.nextFilePath);
         return Promise.resolve()
@@ -88,7 +88,7 @@ export default function renamePaths(previousPath, nextPath, searchInPath) {
 function getUserOptions() {
   return {
     // cpus: 8,
-    extensions: "js",
+    extensions: "jsx",
     // ignoreConfig: [".gitignore"],
     ignorePattern: [...Object.keys(vscode.workspace.getConfiguration().files.exclude)],
     runInBand: "true"
