@@ -28,7 +28,7 @@ export function activate(context) {
                 return
             }
             return vscode.window.showInputBox({
-                prompt: 'Choose path to fix in',
+                prompt: 'Folder to run updates on',
                 value: previousPath
             }).then((searchInPath) => {
                 return vscode.window.withProgress({
@@ -38,13 +38,13 @@ export function activate(context) {
                     // Progress is shown while this function runs.
                     // It can also return a promise which is then awaited
                     return renamePaths(previousPath, nextPath, searchInPath).catch((e) => {
-                        console.error('error12312', e)
+                        console.error('Error: ', e)
                         vscode.window.showErrorMessage(e.message)
                     })
                 })
             })
         }).catch((e) => {
-            console.error('error12312', e)
+            console.error('Error: ', e)
             vscode.window.showErrorMessage(e.message)
         })
     });

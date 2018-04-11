@@ -3,7 +3,7 @@
     "displayName": "js-path-refactor",
     "description": "Simple helper for changing the path/name of a given file/folder and updating all related import statements in a project",
     "version": "0.0.6",
-    "publisher": "tnrich",
+    "publisher": "DennisOosterling",
     "engines": {
         "vscode": "^1.16.0"
     },

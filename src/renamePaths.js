@@ -41,33 +41,22 @@ function renameAndTransform(
               paths,
               userOptions
             ).then(() => {
-              console.log("heyoo");
+              console.log("Paths successfully renamed");
               return;
             });
           })
           .catch(e => {
-            console.error("error running transforms:", e);
+            console.error("Error running transforms:", e);
             vscode.window.showErrorMessage("Error running transforms");
           });
       } else {
-        vscode.window.showErrorMessage("The file is not a .js file");
+        vscode.window.showErrorMessage("The file is not a .jsx file");
       }
     } else {
       vscode.window.showErrorMessage("Error renaming file");
     }
   })
 }
-
-// function syncChangesWithGit(projectRoot) {
-//   const repo = getRepo(projectRoot);
-//   if (repo !== null) {
-//     repo.refreshIndex();
-//     repo.refreshStatus();
-//     atom.workspace.getTextEditors().forEach(editor =>
-//       repo.getPathStatus(editor.getPath()),
-//     );
-//   }
-// }
 
 export default function renamePaths(previousPath, nextPath, searchInPath) {
   // const [projectRoot] = vscode.workspace.workspaceFolders;
@@ -78,18 +67,14 @@ export default function renamePaths(previousPath, nextPath, searchInPath) {
     previousPath,
     nextPath,
     searchInPath,
-    // projectRoot.uri.path,
     paths,
     userOptions
   );
   return res;
-  // syncChangesWithGit(projectRoot);
 }
 function getUserOptions() {
   return {
-    // cpus: 8,
     extensions: "jsx",
-    // ignoreConfig: [".gitignore"],
     ignorePattern: [...Object.keys(vscode.workspace.getConfiguration().files.exclude)],
     runInBand: "true"
   };
