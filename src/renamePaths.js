@@ -35,7 +35,7 @@ function renameAndTransform(
           })
           .then(() => {
             console.log("starting import declaration");
-            console.log('projectRoot:',projectRoot)
+            console.log("projectRoot:", projectRoot);
             return importDeclarationCodemodRunner(
               [projectRoot],
               paths,
@@ -55,12 +55,12 @@ function renameAndTransform(
     } else {
       vscode.window.showErrorMessage("Error renaming file");
     }
-  })
+  });
 }
 
 export default function renamePaths(previousPath, nextPath, searchInPath) {
   // const [projectRoot] = vscode.workspace.workspaceFolders;
-  vscode.workspace.getConfiguration()
+  vscode.workspace.getConfiguration();
   const userOptions = getUserOptions();
   const paths = buildPathsToRename(previousPath, nextPath);
   const res = renameAndTransform(
@@ -75,13 +75,9 @@ export default function renamePaths(previousPath, nextPath, searchInPath) {
 function getUserOptions() {
   return {
     extensions: "jsx",
-    ignorePattern: [...Object.keys(vscode.workspace.getConfiguration().files.exclude)],
+    ignorePattern: [
+      ...Object.keys(vscode.workspace.getConfiguration().files.exclude)
+    ],
     runInBand: "true"
   };
 }
-
-
-
-
-
-
