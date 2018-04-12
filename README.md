@@ -14,6 +14,11 @@ None currently. It uses your file.exclude list to filter.
 ## Known Issues
 None currently
 
+## TODO
+- [ ] Support jsx & js
+- [ ] Support css
+- [ ] Let user define file type
+
 ## Release Notes
 
 ### 0.0.1
