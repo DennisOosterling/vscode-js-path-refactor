@@ -1,22 +1,22 @@
-# js-path-refactor
+# jsx-path-refactor
 
-js-path-refactor helps you move files around by fixing any broken paths caused by the move
+jsx-path-refactor helps you move files around by fixing any broken paths caused by the move
 
 ![screengif](https://user-images.githubusercontent.com/2730609/30983344-21daee0c-a458-11e7-89c5-a0de73f47064.gif)
+
+## Credits
+Icon: [Paomedia](https://www.iconfinder.com/paomedia)
+Forked repo: https://github.com/tnrich/vscode-js-path-refactor
 
 ## Extension Settings
 None currently. It uses your file.exclude list to filter.
 
 ## Known Issues
-
 None currently
 
 ## Release Notes
 
 ### 0.0.1
+Initial Release
 
- Whoohoo! We're on the map
-
- Links: 
- https://marketplace.visualstudio.com/items?itemName=tnrich.js-path-refactor
- https://github.com/tnrich/vscode-js-path-refactor
+- https://github.com/DennisOosterling/vscode-js-path-refactor
